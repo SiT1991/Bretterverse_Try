@@ -1,0 +1,46 @@
+<resources>
+<!-- Primary Colors -->
+<color name="teal_200">#FF03DAC5</color>
+<color name="teal_700">#FF018786</color>
+<color name="white">#FFFFFFFF</color>
+<color name="black">#FF000000</color>
+<color name="amber_200">#FFFFC107</color>
+<color name="amber_700">#FFC79100</color>
+<color name="gray_100">#FFF5F5F5</color>
+<color name="gray_300">#FFE0E0E0</color>
+<color name="gray_600">#FF757575</color>
+<color name="dark_gray">#FF424242</color>
+
+    <!-- Theme Colors -->
+<color name="colorPrimary">@color/teal_200</color>
+<color name="colorPrimaryVariant">@color/teal_700</color>
+<color name="colorOnPrimary">@color/white</color>
+<color name="colorSecondary">@color/amber_200</color>
+<color name="colorSecondaryVariant">@color/amber_700</color>
+<color name="colorOnSecondary">@color/black</color>
+<color name="androidwindowBackground">@color/gray_100</color>
+<color name="colorSurface">@color/white</color>
+<color name="colorOnSurface">@color/black</color>
+
+    <!-- Text Colors -->
+<color name="textPrimary">@color/black</color>
+<color name="textSecondary">@color/dark_gray</color>
+<color name="textHint">@color/gray_600</color>
+    <color name="colorText">#000000</color>
+    <color name="colorTextHint">#808080</color>
+
+    <!-- Status and Navigation Bar Colors -->
+<color name="androidnavigationBarColor">@color/teal_200</color>
+<color name="androidstatusBarColor">@color/teal_700</color>
+
+    <!-- Dialog Theme Colors -->
+<color name="colorAccent">@color/amber_700</color>
+
+    <!-- Custom Colors -->
+<color name="red_200">#FFB00020</color>
+<color name="red_700">#FFD32F2F</color>
+<color name="green_200">#FF64DD17</color>
+<color name="green_700">#FF1B5E20</color>
+<color name="blue_200">#FF2979FF</color>
+<color name="blue_700">#FF0D47A1</color>
+</resources>

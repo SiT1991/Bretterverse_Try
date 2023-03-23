@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+    <TextView
+        android:id="@+id/textview_bot_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="@string/bot_status"
+        android:textSize="14sp" />
+    <TextView
+        android:id="@+id/textview_bot_suggestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview_bot_status"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="@string/bot_suggestion"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/textview_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview_bot_suggestion"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="@string/score"
+        android:textSize="14sp" />
+    <EditText
+        android:id="@+id/edittext_lyrics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview_score"
+        android:layout_marginTop="16dp"
+        android:hint="@string/lyrics_hint"
+        android:inputType="textMultiLine"
+        android:maxLength="1000"
+        android:maxLines="10"
+        android:minLines="5"
+        android:textSize="14sp" android:autofillHints=""/>
+    <Button
+        android:id="@+id/button_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edittext_lyrics"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="@string/submit" />
+</RelativeLayout>

@@ -1,0 +1,140 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 33
+    buildToolsVersion "31.0.0"
+
+    defaultConfig {
+        applicationId "com.example.bretterverse"
+        minSdkVersion 24
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // Specify which ABI's APKs to generate, we are not using split APKs
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("bretterverse.keystore")
+            storePassword 'bretterverse'
+            keyAlias 'bretterverse_alias'
+            keyPassword 'bretterverse'
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            debuggable false
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            lintOptions {
+                checkReleaseBuilds true
+                abortOnError false
+            }
+        }
+    }
+
+    flavorDimensions "environment", "features"
+
+    productFlavors {
+        production {
+            dimension "environment"
+            applicationIdSuffix ".production"
+            versionNameSuffix "-prod"
+            signingConfig signingConfigs.release
+            manifestPlaceholders = [appName: "Bretterverse"]
+        }
+        development {
+            dimension "environment"
+            applicationIdSuffix ".development"
+            versionNameSuffix "-dev"
+            signingConfig signingConfigs.debug
+            manifestPlaceholders = [appName: "Bretterverse-Dev"]
+        }
+        internal {
+            dimension "environment"
+            applicationIdSuffix ".internal"
+            versionNameSuffix "-int"
+            signingConfig signingConfigs.debug
+            manifestPlaceholders = [appName: "Bretterverse-Int"]
+        }
+        featureFlag {
+            dimension "features"
+            applicationIdSuffix ".featureFlag"
+            versionNameSuffix "-ff"
+            signingConfig signingConfigs.debug
+            manifestPlaceholders = [appName: "Bretterverse-FF"]
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.google.firebase:firebase-firestore:23.0.3'
+    implementation 'com.google.firebase:firebase-auth:20.0.1'
+
+    // Android Material Design Support Library
+    implementation 'com.google.android.material:material:1.5.0'
+
+    // AndroidX Support Libraries
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.annotation:annotation:1.3.0'
+
+    // Glide Image Loading Library
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+
+    // Firebase Libraries
+    implementation platform('com.google.firebase:firebase-bom:29.0.4')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-storage'
+
+    // Room Database Library
+    implementation "androidx.room:room-runtime:2.3.0"
+    implementation "androidx.room:room-ktx:2.3.0"
+
+    // Other Libraries
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation 'org.jsoup:jsoup:1.14.2'
+    implementation 'com.github.ksoichiro:android-observablescrollview:1.6.0'
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    implementation 'com.google.android.gms:play-services-ads:20.5.0'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+}

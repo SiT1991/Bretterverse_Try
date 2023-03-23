@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "508899108319",
+    "project_id": "bretterverse",
+    "storage_bucket": "bretterverse.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508899108319:android:fdee9d5d843ded413fd06a",
+        "android_client_info": {
+          "package_name": "com.exemple.bretterverse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "508899108319-4c730jdlqi2ilfj4nus7n1icob34ebjl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOlCnbDhp1VAvGUX4YbIewRzvYHFDofJ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "508899108319-4c730jdlqi2ilfj4nus7n1icob34ebjl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

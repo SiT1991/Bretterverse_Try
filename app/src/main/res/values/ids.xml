@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="editTextEmail" type="id"/>
+    <item name="message_text_view" type="id"/>
+    <item name="sender_text_view" type="id"/>
+    <item name="timestamp_text_view" type="id"/>
+    <item name="message_recyclerview" type="id"/>
+    <item name="message_edittext" type="id"/>
+    <item name="send_button" type="id"/>
+</resources>

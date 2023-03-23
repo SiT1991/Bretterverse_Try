@@ -1,0 +1,64 @@
+package com.example.bretterverse
+
+import android.content.Intent
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager.widget.ViewPager
+import com.google.android.material.tabs.TabLayout
+import com.google.firebase.auth.FirebaseAuth
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var firebaseAuth: FirebaseAuth
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Firebase Auth initialisieren
+        firebaseAuth = FirebaseAuth.getInstance()
+
+        val emailEditText = findViewById<EditText>(R.id.editTextEmail)
+        val passwordEditText = findViewById<EditText>(R.id.editTextPassword)
+        val loginButton = findViewById<Button>(R.id.buttonLogin)
+
+        val loginFailed = getString(R.string.login_failed)
+        val loginFailedEmptyFields = getString(R.string.login_failed_empty_fields)
+
+        loginButton.setOnClickListener {
+            val email = emailEditText.text.toString().trim()
+            val password = passwordEditText.text.toString().trim()
+
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                firebaseAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            // Login erfolgreich
+                            startActivity(Intent(this, HomeActivity::class.java))
+                            finish()
+                        } else {
+                            // Login fehlgeschlagen
+                            Toast.makeText(this, loginFailed, Toast.LENGTH_SHORT).show()
+                        }
+                    }
+            } else {
+                Toast.makeText(this, loginFailedEmptyFields, Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // Setze das TabLayout
+        val tabLayout = findViewById<TabLayout>(R.id.tab_layout)
+        val viewPager = findViewById<ViewPager>(R.id.view_pager)
+        viewPager.adapter = TabPagerAdapter(supportFragmentManager)
+        tabLayout.setupWithViewPager(viewPager)
+
+        // Öffne den Chatroom
+        val chatroomButton = findViewById<Button>(R.id.chatroom_button)
+        chatroomButton.setOnClickListener {
+            startActivity(Intent(this, ChatroomActivity::class.java))
+        }
+    }
+}

@@ -1,0 +1,73 @@
+<resources>
+    <!-- App Name -->
+    <string name="app_name">Bretterverse</string>
+
+    <!-- Search -->
+    <string name="search_hint">Search for posts</string>
+
+    <!-- Post -->
+    <string name="post">Post</string>
+    <string name="post_hint">Share something with the community</string>
+
+    <!-- Comment -->
+    <string name="comment">Comment</string>
+    <string name="comment_hint">Add a comment</string>
+
+    <!-- Send -->
+    <string name="send">Send</string>
+
+    <!-- Results -->
+    <string name="results">Results</string>
+    <string name="no_results">No results found</string>
+    <string name="loading_results">Loading Hold on</string>
+
+    <!-- Login -->
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login_button">Login</string>
+
+    <!-- Register -->
+    <string name="register">Register</string>
+    <string name="register_button">Register</string>
+    <string name="logout">Logout</string>
+
+    <!-- Error -->
+    <string name="error">Error</string>
+    <string name="unexpected_error">An unexpected error occurred</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="audio_permission">Audio permission required</string>
+    <string name="internet_permission">Internet permission required</string>
+
+    <!-- Register Screen -->
+    <string name="register_title">Register</string>
+    <string name="register_email_hint">Email</string>
+    <string name="register_password_hint">Password</string>
+    <string name="register_button_text">Register</string>
+
+    <!-- Login Screen -->
+    <string name="hint_email">E-Mail</string>
+    <string name="hint_password">Passwort</string>
+    <string name="button_login">Anmelden</string>
+    <string name="login_failed">Login failed</string>
+    <string name="login_failed_empty_fields">Please fill in all fields</string>
+
+    <!-- Chatroom Screen -->
+    <string name="write_here">Write here</string>
+    <string name="todo">TODO</string>
+    <string name="message_input_hint">Message</string>
+    <string name="bot_status">Bot is online</string>
+    <string name="Bretterverse"/>
+    <string name="login_activity_title"/>
+    <string name="register_activity_title"/>
+    <string name="profile_activity_title"/>
+    <string name="create_post_activity_title"/>
+    <string name="post_detail_activity_title"/>
+    <string name="edit_profile_activity_title"/>
+    <string name="title_activity_image_picker"/>
+    <string name="title_activity_auth"/>
+    <string name="title_activity_splash"/>
+    <string name="title_activity_login"/>
+    <string name="title_activity_register"/>
+    <string name="title_activity_main"/>
+</resources>
